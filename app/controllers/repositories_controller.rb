@@ -5,6 +5,7 @@ class RepositoriesController < ApplicationController
   end
 
   def github_search
+
     begin
       @resp = Faraday.get 'https://api.github.com/search/repositories' do |req|
           req.params['client_id'] = "REPLACE WITH STRING"
@@ -27,6 +28,6 @@ class RepositoriesController < ApplicationController
     end
 
     render 'search'
-  end
 
+  end
 end
